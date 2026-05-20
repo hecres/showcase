@@ -1,0 +1,21 @@
+{
+    "name": "Hecres.Core.HecUnity.Shared",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a6b675b6a169d6044a1fec848cad378a",
+        "GUID:77221876cc6b8244180b96e320b1bcd4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "ObservableCollections.R3.dll",
+        "ObservableCollections.dll",
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
