@@ -1,0 +1,4 @@
+outputs/
+tmp/
+tools.json
+launch-restart-guard.json
