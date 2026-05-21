@@ -1,0 +1,27 @@
+{
+    "name": "Hecres.Project.App.Main.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:422c2181e4a104c438be506c31748e6e",
+        "GUID:9b23fb6d4d334eb188ea590eb2f710be",
+        "GUID:a6b675b6a169d6044a1fec848cad378a",
+        "GUID:b9a631bbbe9ad4949bbae22db1032f1e",
+        "GUID:74bbec52db137b446a81d14bd638fe22",
+        "GUID:8d9c374bea9f35046ab8fa458a207190",
+        "GUID:965ff557d70342da9cbe218cdf84d8fd",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
