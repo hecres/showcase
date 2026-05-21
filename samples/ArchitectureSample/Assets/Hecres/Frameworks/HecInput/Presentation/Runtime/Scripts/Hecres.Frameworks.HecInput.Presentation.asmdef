@@ -1,0 +1,23 @@
+{
+    "name": "Hecres.Frameworks.HecInput.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b9a631bbbe9ad4949bbae22db1032f1e",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "ObservableCollections.R3.dll",
+        "ObservableCollections.dll",
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
