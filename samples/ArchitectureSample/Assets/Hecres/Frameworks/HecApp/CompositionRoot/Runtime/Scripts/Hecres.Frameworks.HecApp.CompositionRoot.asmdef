@@ -1,0 +1,30 @@
+{
+    "name": "Hecres.Frameworks.HecApp.CompositionRoot",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a619794d1d454e4482390e99ea737404",
+        "GUID:b9a631bbbe9ad4949bbae22db1032f1e",
+        "GUID:422c2181e4a104c438be506c31748e6e",
+        "GUID:c109a4116e7a4dc88d3ed6ab0371b2a8",
+        "GUID:74bbec52db137b446a81d14bd638fe22",
+        "GUID:4c5aa657783ef204393ecd562851278c",
+        "GUID:a5a45e8da54848debaf708e8243c0cd7",
+        "GUID:8d9c374bea9f35046ab8fa458a207190",
+        "GUID:965ff557d70342da9cbe218cdf84d8fd",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "ObservableCollections.R3.dll",
+        "ObservableCollections.dll",
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
