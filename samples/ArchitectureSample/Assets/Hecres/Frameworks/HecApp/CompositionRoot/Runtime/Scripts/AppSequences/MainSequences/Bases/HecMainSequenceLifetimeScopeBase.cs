@@ -1,6 +1,5 @@
 using Hecres.Core.HecError.Handlers;
 using Hecres.Core.HecError.Handlers.Interfaces;
-using Hecres.Frameworks.HecApp.Presentation.AppSequences.MainSequences.LayerableCanvases.Managers;
 using Hecres.Frameworks.HecApp.Presentation.AppSequences.SceneSequences.LayerableCanvases.Managers;
 using Hecres.Frameworks.HecInput.Presentation.EventSystems;
 using Hecres.Frameworks.HecResource.Domain.Repositories.ResourceLoaders.Interfaces;
@@ -8,9 +7,6 @@ using Hecres.Frameworks.HecResource.Infrastructure.ResourceLoaders;
 using Hecres.Frameworks.HecResource.Infrastructure.ResourceLoaders.Interfaces;
 using Hecres.Frameworks.HecUI.Presentation.UI.Managements.Canvases.Managers;
 using Hecres.Frameworks.HecUI.Presentation.UI.Managements.FocusSystems;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.InputBlockers.Managers;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.ScreenTransitions.Managers;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.Splashes.Managers;
 using VContainer;
 using VContainer.Unity;
 
@@ -55,10 +51,6 @@ namespace Hecres.Frameworks.HecApp.CompositionRoot.AppSequences.MainSequences.Ba
             ResourceLoader = new HecUnityAddressables();
             builder.RegisterInstance(ResourceLoader).As<IHecResourceLoader>();
 
-            SplashUiManager.FindAndBind(builder);
-            InputBlockerUiManager.FindAndBind(builder);
-            ScreenTransitionUiManager.FindAndBind(builder);
-            MainSequenceUiManager.FindAndBind(builder);
             SceneSequenceUiManager.FindAndBind(builder);
 
             FindAndBindMainSequenceManager(builder);

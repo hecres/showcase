@@ -34,11 +34,10 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
             // 呼び出し元でキャンセル制御すべきものではないため、内部でトークンを設定しています
             var token = destroyCancellationToken;
 
-            await ScreenTransitionUiManager.ShowMainAsync(token);
-
             // スタックできないシーケンスの場合、現在展開中のシーンシーケンスをすべて解放します
             if (!args.CanStack)
             {
+                SceneSequenceUiManager.CleanAllManagedUi();
                 await UnloadAllSceneSequencesAsync(token);
             }
 
@@ -96,8 +95,6 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
             // 呼び出し元でキャンセル制御すべきものではないため、内部でトークンを設定しています
             var token = destroyCancellationToken;
 
-            await ScreenTransitionUiManager.ShowMainAsync(token);
-
             // 展開中のシーンシーケンスを解放します
             if (sceneSequenceManagerStack.TryPop(out var targetSceneSequence))
             {
@@ -122,7 +119,7 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
         /// <returns>true: 行なえる / false: 行なえない</returns>
         private bool CanUnloadSceneSequence()
         {
-            return !InputBlockerUiManager.IsBlocking.CurrentValue && !ScreenTransitionUiManager.AnyVisibleTransition.CurrentValue;
+            return true;
         }
 
         /// <summary>

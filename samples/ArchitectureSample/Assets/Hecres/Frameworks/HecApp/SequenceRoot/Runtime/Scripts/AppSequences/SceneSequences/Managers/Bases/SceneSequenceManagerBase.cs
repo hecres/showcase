@@ -10,7 +10,6 @@ using Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Managers.
 using Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.SceneSequences.Managers.Interfaces;
 using Hecres.Frameworks.HecInput.Presentation.EventSystems.Interfaces;
 using Hecres.Frameworks.HecUI.Presentation.UI.Managements.FocusSystems.Interfaces;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.ScreenTransitions.Managers.Interfaces;
 using R3;
 using R3.Triggers;
 using UnityEngine;
@@ -59,13 +58,6 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.SceneSequences.Mana
         /// </summary>
         [field: Inject]
         protected ISceneSequenceLoader SceneSequenceLoader { get; }
-
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// 画面遷移演出UIの管理インターフェース
-        /// </summary>
-        [field: Inject]
-        protected IScreenTransitionUiManager ScreenTransitionUiManager { get; }
 
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         /// <summary>
@@ -161,12 +153,12 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.SceneSequences.Mana
         /// <param name="activateType">アクティベートタイプ</param>
         /// <param name="token">キャンセル用のトークン</param>
         /// <returns>アクティベート後処理の非同期タスク</returns>
-        public virtual async UniTask OnPostActivateSequenceAsync(SceneSequenceActivateType activateType, CancellationToken token)
+        public virtual UniTask OnPostActivateSequenceAsync(SceneSequenceActivateType activateType, CancellationToken token)
         {
             token.ThrowIfCancellationRequested();
 
             UiFocusSystem.UpdateFocus();
-            await ScreenTransitionUiManager.HideMainAsync(token);
+            return UniTask.CompletedTask;
         }
 
         /// <summary>

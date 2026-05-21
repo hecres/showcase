@@ -3,13 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Hecres.Core.HecError.Handlers.Interfaces;
 using Hecres.Core.HecUnity.Presentation.UnityObjects.Components.Behaviours.MonoBehaviours.Bases;
-using Hecres.Frameworks.HecApp.Presentation.AppSequences.MainSequences.LayerableCanvases.Managers.Interfaces;
 using Hecres.Frameworks.HecApp.Presentation.AppSequences.SceneSequences.LayerableCanvases.Managers.Interfaces;
 using Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.SceneSequences.Managers.Interfaces;
 using Hecres.Frameworks.HecInput.Presentation.EventSystems.Interfaces;
 using Hecres.Frameworks.HecUI.Presentation.UI.Managements.FocusSystems.Interfaces;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.InputBlockers.Managers.Interfaces;
-using Hecres.Frameworks.HecUI.Toolkit.Presentation.UI.Overlays.ScreenTransitions.Managers.Interfaces;
 using R3;
 using VContainer;
 
@@ -43,27 +40,6 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
 
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         /// <summary>
-        /// 入力ブロックUIの管理インターフェース
-        /// </summary>
-        [field: Inject]
-        protected IInputBlockerUiManager InputBlockerUiManager { get; }
-
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// 画面遷移演出UIの管理インターフェース
-        /// </summary>
-        [field: Inject]
-        protected IScreenTransitionUiManager ScreenTransitionUiManager { get; }
-
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// メインシーケンスUIの管理インターフェース
-        /// </summary>
-        [field: Inject]
-        protected IMainSequenceUiManager MainSequenceUiManager { get; }
-
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
         /// シーンシーケンスUIの管理インターフェース
         /// </summary>
         [field: Inject]
@@ -71,16 +47,22 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
 
         private readonly Stack<ISceneSequenceManager> sceneSequenceManagerStack = new();
 
+        private bool isInitialized;
+
         // ReSharper disable once UnusedMember.Local
         /// <summary>
         /// 初期化します。
         /// </summary>
         /// <remarks>
-        /// VContainerのInjectによって呼び出されます。
+        /// VContainerのInjectによって呼び出されます。<br/>
+        /// 子LifetimeScope構築の都度SetContainerが伝播してInjectが複数回走るのを防ぐため、初回のみ実処理を行ないます。
         /// </remarks>
         [Inject]
         private void Initialize()
         {
+            if (isInitialized) return;
+            isInitialized = true;
+
             InitializeAsync(destroyCancellationToken).Forget();
         }
 
