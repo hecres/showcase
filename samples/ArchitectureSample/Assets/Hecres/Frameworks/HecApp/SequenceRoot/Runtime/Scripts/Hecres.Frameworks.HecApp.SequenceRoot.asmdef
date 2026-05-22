@@ -1,0 +1,37 @@
+{
+    "name": "Hecres.Frameworks.HecApp.SequenceRoot",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a6b675b6a169d6044a1fec848cad378a",
+        "GUID:a619794d1d454e4482390e99ea737404",
+        "GUID:b9a631bbbe9ad4949bbae22db1032f1e",
+        "GUID:c11323cf19fe0794b99c11e5d4456747",
+        "GUID:422c2181e4a104c438be506c31748e6e",
+        "GUID:74bbec52db137b446a81d14bd638fe22",
+        "GUID:4c5aa657783ef204393ecd562851278c",
+        "GUID:a5a45e8da54848debaf708e8243c0cd7",
+        "GUID:8d9c374bea9f35046ab8fa458a207190",
+        "GUID:965ff557d70342da9cbe218cdf84d8fd",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:593a5b492d29ac6448b1ebf7f035ef33",
+        "GUID:5c01796d064528144a599661eaab93a6",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "ObservableCollections.R3.dll",
+        "ObservableCollections.dll",
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
