@@ -201,9 +201,9 @@ Domain・UseCase を外部フレームワークから独立させるため、ラ
 
 | 由来 | 該当する層・構造 |
 |---|---|
-| クリーンアーキテクチャ | 依存を内向き一方向に保つ依存性のルール・依存性逆転／ Application 層の「UseCase」という呼称 |
-| DDD（Eric Evans） | Presentation / Application / Domain / Infrastructure の4層構成／ Domain 内部の Entities・ValueObjects・Services・Repositories への分割 |
-| 本PJ独自 | メタ層・モジュール層の構成／ CompositionRoot・SequenceRoot の副層 |
+| クリーンアーキテクチャ | - 依存を内向き一方向に保つ依存性のルール・依存性逆転<br/>- Application 層の「UseCase」という呼称 |
+| DDD（Eric Evans） | - Presentation / Application / Domain / Infrastructure の4層構成<br/>- Domain 内部の Entities・ValueObjects・Services・Repositories への分割 |
+| 本PJ独自 | - メタ層・モジュール層の構成<br/>- CompositionRoot・SequenceRoot の副層 |
 
 「同心円の図」に固定の層名・層数があるわけではなく、本PJはこの3者を合成して独自のレイヤー構成を定義しています。
 
