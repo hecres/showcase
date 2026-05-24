@@ -64,3 +64,6 @@ Model.Value.Subscribe(value => view.Apply(value)).AddTo(MvrpRxToken);
 ## 関連
 
 - [採用アーキテクチャ（README）](../README.md)
+- [レイヤー構成](layer-structure.md) … メタ層・副層・依存方向の全体構造
+- [コンテキスト分割](context-split.md) … モジュール（コンテキスト）境界と Port
+- [ドメインモデリング](domain-modeling.md) … Domain の構成要素と読み書き分離
