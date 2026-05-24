@@ -19,6 +19,7 @@
 
 | 具体化方法 | 目的 | ベースとなったアーキテクチャ |
 |---|---|---|
-| [用語集](../glossaries/) | ユビキタス言語の確立（用語の統一） | - DDD（ユビキタス言語） |
+| [用語集](../glossaries/) | ユビキタス言語の確立（境界は設けず、PJ内で一貫した用語定義を行う） | - DDD（ユビキタス言語） |
 | [レイヤー構成](architectures/layer-structure.md) | ドメインの独立と依存方向の制御 | - クリーンアーキテクチャ（依存方向のルール、依存性逆転）<br/>- DDD（レイヤードアーキテクチャ、構成要素） |
+| [コンテキスト分割](architectures/context-split.md) | コンテキスト境界の明確化とモデルの独立 | - DDD（境界づけられたコンテキストの発想） |
 | [UI構成](architectures/ui-structure.md) | ドメイン状態と UI のリアクティブな同期 | - MVRP（Model / View / Reactive Presenter の三分割、Model 状態の Observable 公開、購読ライフサイクルの管理） |
