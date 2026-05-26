@@ -1,0 +1,18 @@
+{
+    "name": "Hecres.Project.Foundation.Networking.Domain.Repositories",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a76a97d1499843eb859ecd8bc0945027",
+        "GUID:aa2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

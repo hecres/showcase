@@ -1,0 +1,16 @@
+{
+    "name": "Hecres.Frameworks.HecNetworking.Domain.ValueObjects",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a619794d1d454e4482390e99ea737404"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}
