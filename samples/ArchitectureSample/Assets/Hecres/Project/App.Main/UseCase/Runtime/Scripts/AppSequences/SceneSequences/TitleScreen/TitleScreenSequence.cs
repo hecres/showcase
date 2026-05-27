@@ -5,21 +5,7 @@ namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.TitleScree
     /// <summary>
     /// タイトルシーケンスのModelクラス
     /// </summary>
-    public class TitleScreenSequence : ProjectSceneSequenceBase<TitleScreenSequence.ManualArgs>
+    public class TitleScreenSequence : ProjectSceneSequenceBase
     {
-        /// <summary>
-        /// シーケンス生成時に手渡しする手動引数クラス
-        /// </summary>
-        public class ManualArgs
-        {
-        }
-
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        /// <param name="args">シーケンス生成時に手渡しする手動引数</param>
-        public TitleScreenSequence(ManualArgs args) : base(args)
-        {
-        }
     }
 }

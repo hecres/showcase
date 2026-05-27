@@ -22,8 +22,7 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Home.
         {
             token.ThrowIfCancellationRequested();
 
-            var args = new HomeSequence.ManualArgs();
-            return UniTask.FromResult(new HomeSequence(args));
+            return UniTask.FromResult(new HomeSequence());
         }
 
         /// <summary>
