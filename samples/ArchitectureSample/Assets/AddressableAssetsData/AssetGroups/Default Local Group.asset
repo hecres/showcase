@@ -15,8 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 5b95ff0d166941a459bc5ab8baceadb6
   m_SerializeEntries:
+  - m_GUID: 5cdf018b4f3e60842a04c589b6b29435
+    m_Address: QuestExecution
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a30b4952159f414ab918ccc95962ad1
+    m_Address: QuestSelect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9b142c61d87fa834daff294782aabd2f
     m_Address: TitleScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2530faebda4ac84faaea6e43aaf816d
+    m_Address: QuestResult
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
