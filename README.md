@@ -29,6 +29,7 @@ Unity 6 / C# / .NET Standard 2.1 をベースに開発しています。<br/>
 ### 採用開発ツール
 
 - Claude Code（AI コーディングエージェント）
+- Codex（AI コーディングエージェント）
 - uLoopMCP（AI 駆動の Unity 開発自動化）
 
 ### 採用アーキテクチャ
