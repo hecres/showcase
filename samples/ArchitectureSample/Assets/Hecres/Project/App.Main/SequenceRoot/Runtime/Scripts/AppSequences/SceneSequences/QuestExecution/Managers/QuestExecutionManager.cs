@@ -22,7 +22,7 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
         {
             token.ThrowIfCancellationRequested();
 
-            return UniTask.FromResult(new QuestExecutionSequence());
+            return UniTask.FromResult(new QuestExecutionSequence(SequenceManagerArgs.QuestId));
         }
 
         /// <summary>
