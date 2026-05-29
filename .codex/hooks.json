@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/guard-cs-direct-edit-codex.mjs\"",
+            "commandWindows": "node \".codex\\hooks\\guard-cs-direct-edit-codex.mjs\"",
+            "timeout": 30,
+            "statusMessage": "Checking C# edit skill guard"
+          }
+        ]
+      }
+    ]
+  }
+}
