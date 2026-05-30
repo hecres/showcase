@@ -121,3 +121,17 @@ flowchart TD
 > [!NOTE]<br/>
 > Opus 4.7 / GPT-5.5 までの利用経験を前提としています。<br/>
 > AI の性能向上によって解決する可能性があるため、判断基準は継続的に更新する必要があると考えています。<br/>
+
+## 方針を支える運用資産
+
+AI 活用方針は、判断基準だけでなく Codex 向けのスキル・レビュアー・hook としても整備しています。<br/>
+実装時の手順、レビュー観点、直接編集の抑止を分けて定義することで、AI への指示と品質確認を属人的な注意に閉じないようにしています。
+
+| 資産 | 役割 |
+|---|---|
+| [implement-cs](../../.agents/skills/implement-cs/SKILL.md) | C# 実装時の手順。規約参照、実装、コメント整備、コンパイル確認、レビューまでを一連の流れとして定義 |
+| [comment-cs](../../.agents/skills/comment-cs/SKILL.md) | XML ドキュメントコメントの付与・修正手順。用語やコメント粒度を揃えるためのルールを参照 |
+| [review-cs](../../.agents/skills/review-cs/SKILL.md) | C# 成果物レビュー手順。複数の専門レビュアーを分担させ、スタイル・ファイルレイアウト・コメント観点を確認 |
+| [cs-reviewer-style](../../.codex/agents/cs-reviewer-style.toml) / [cs-reviewer-style-file-layout](../../.codex/agents/cs-reviewer-style-file-layout.toml) / [cs-reviewer-comment](../../.codex/agents/cs-reviewer-comment.toml) | C# レビュー用の専門レビュアー定義。確認観点を分離し、レビュー漏れを減らす |
+| [C# 直接編集ガード](../../.codex/hooks/guard-cs-direct-edit-codex.mjs) | `.cs` ファイルをスキル外で直接編集しようとした場合に検知する補助ガード |
+| [improve-knowledge](../../.agents/skills/improve-knowledge/SKILL.md) | 想定と異なる成果物が出た場合に、原因分析とルール・スキル・hook への改善反映を行う手順 |
