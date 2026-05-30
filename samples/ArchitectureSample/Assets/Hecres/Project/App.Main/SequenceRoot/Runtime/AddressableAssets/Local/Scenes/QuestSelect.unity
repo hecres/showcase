@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46e96e3c1e0878459ebac49d1c2bfe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Hecres.Project.App.Main.SequenceRoot::Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestSelect.Managers.QuestSelectManager
-  sequenceUiPresenterPrefab: {fileID: 2954396805285564005, guid: c701e88010bf3ce449eb7ad09207304f, type: 3}
+  sequenceUiPresenterPrefab: {fileID: 3497528421722672684, guid: b561451aa48bd2a42849e554fde9e010, type: 3}
 --- !u!4 &1051810293
 Transform:
   m_ObjectHideFlags: 0
