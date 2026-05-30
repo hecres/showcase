@@ -3,7 +3,9 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Hecres.Project.App.Main.Presentation.AppSequences.SceneSequences.QuestResult.Presenters;
 using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Bases.Managers;
+using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Home.Managers;
 using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestResult;
+using R3;
 using UnityEngine;
 
 namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestResult.Managers
@@ -22,7 +24,7 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
         {
             token.ThrowIfCancellationRequested();
 
-            return UniTask.FromResult(new QuestResultSequence());
+            return UniTask.FromResult(new QuestResultSequence(SequenceManagerArgs.QuestId, SequenceManagerArgs.IsWin));
         }
 
         /// <summary>
@@ -38,7 +40,23 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
             token.ThrowIfCancellationRequested();
 
             var presenter = await SceneSequenceUiCreator.CreateUiPresenterAsync(SequenceModel, sequenceUiPresenterPrefab, token);
+            presenter.ReturnHomeRequested
+                .SubscribeAwait(async (_, subscribeToken) => await LoadHomeSequenceAsync(subscribeToken), AwaitOperation.Drop)
+                .AddTo(this);
+
             return new Tuple<GameObject, QuestResultUiPresenter>(presenter.gameObject, presenter);
+        }
+
+        /// <summary>
+        /// ホームシーケンスへの遷移を行ないます。
+        /// </summary>
+        /// <param name="token">キャンセル用のトークン</param>
+        /// <returns>遷移処理の非同期タスク</returns>
+        private async UniTask LoadHomeSequenceAsync(CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+
+            await SceneSequenceLoader.LoadSceneSequenceAsync(new HomeManagerArgs());
         }
     }
 }

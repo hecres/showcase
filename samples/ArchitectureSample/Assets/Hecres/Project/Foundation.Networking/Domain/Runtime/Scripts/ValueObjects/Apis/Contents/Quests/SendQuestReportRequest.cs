@@ -1,16 +1,16 @@
 using System;
-using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.Bases;
+using Hecres.Frameworks.HecNetworking.Domain.ValueObjects.Apis.Contents.Interfaces;
 using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 
-namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestResult
+namespace Hecres.Project.Foundation.Networking.Domain.ValueObjects.Apis.Contents.Quests
 {
     /// <summary>
-    /// クエスト結果シーケンスのModelクラス
+    /// クエスト結果送信リクエストの不変データクラス
     /// </summary>
-    public class QuestResultSequence : ProjectSceneSequenceBase
+    public class SendQuestReportRequest : IHecApiRequest
     {
         /// <summary>
-        /// 結果表示対象のクエストID
+        /// 結果報告対象のクエストID
         /// </summary>
         public QuestDataId QuestId { get; }
 
@@ -22,9 +22,9 @@ namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestResul
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="questId">結果表示対象のクエストID</param>
+        /// <param name="questId">結果報告対象のクエストID</param>
         /// <param name="isWin">クエストに勝利したかどうか</param>
-        public QuestResultSequence(QuestDataId questId, bool isWin)
+        public SendQuestReportRequest(QuestDataId questId, bool isWin)
         {
             QuestId = questId ?? throw new ArgumentNullException(nameof(questId));
             IsWin = isWin;

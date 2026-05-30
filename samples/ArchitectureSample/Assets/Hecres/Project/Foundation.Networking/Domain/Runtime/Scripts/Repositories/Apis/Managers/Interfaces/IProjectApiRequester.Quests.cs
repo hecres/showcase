@@ -14,5 +14,13 @@ namespace Hecres.Project.Foundation.Networking.Domain.Repositories.Apis.Managers
         /// <param name="token">キャンセル用のトークン</param>
         /// <returns>取得結果</returns>
         UniTask<GetQuestListResult> GetQuestListAsync(GetQuestListRequest request, CancellationToken token);
+
+        /// <summary>
+        /// クエストの結果を送信します。
+        /// </summary>
+        /// <param name="request">リクエストデータ</param>
+        /// <param name="token">キャンセル用のトークン</param>
+        /// <returns>送信結果</returns>
+        UniTask<SendQuestReportResult> SendQuestReportAsync(SendQuestReportRequest request, CancellationToken token);
     }
 }

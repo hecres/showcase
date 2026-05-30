@@ -5,12 +5,9 @@ using Hecres.Project.App.Main.Presentation.AppSequences.SceneSequences.QuestSele
 using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Bases.Managers;
 using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestExecution.Managers;
 using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestSelect;
-using Hecres.Project.Foundation.MasterData.Domain.Repositories.Managers.Interfaces;
 using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
-using Hecres.Project.Foundation.Networking.Domain.Repositories.Apis.Managers.Interfaces;
 using R3;
 using UnityEngine;
-using VContainer;
 
 namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestSelect.Managers
 {
@@ -19,20 +16,6 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
     /// </summary>
     public class QuestSelectManager : ProjectSceneSequenceManagerBase<QuestSelectManagerArgs, QuestSelectSequence, QuestSelectUiPresenter>
     {
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// APIのリクエストインターフェース
-        /// </summary>
-        [field: Inject]
-        private IProjectApiRequester ApiRequester { get; }
-
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// マスターデータの取得インターフェース
-        /// </summary>
-        [field: Inject]
-        private IProjectMasterDataGetter MasterDataGetter { get; }
-
         /// <summary>
         /// シーケンスModelを作成します。
         /// </summary>

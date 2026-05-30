@@ -14,7 +14,13 @@ namespace Hecres.Project.Foundation.Networking.Infrastructure.Apis.Managers
         /// </summary>
         public ReadOnlyReactiveProperty<GetQuestListResult> GetQuestListResult => getQuestList.LatestResult;
 
+        /// <summary>
+        /// クエスト結果送信結果
+        /// </summary>
+        public ReadOnlyReactiveProperty<SendQuestReportResult> SendQuestReportResult => sendQuestReport.LatestResult;
+
         private readonly DummyGetQuestList getQuestList;
+        private readonly DummySendQuestReport sendQuestReport;
 
         /// <summary>
         /// クエスト一覧を取得します。
@@ -27,6 +33,19 @@ namespace Hecres.Project.Foundation.Networking.Infrastructure.Apis.Managers
             token.ThrowIfCancellationRequested();
 
             return getQuestList.ProcessAsync(request, token);
+        }
+
+        /// <summary>
+        /// クエストの結果を送信します。
+        /// </summary>
+        /// <param name="request">リクエストデータ</param>
+        /// <param name="token">キャンセル用のトークン</param>
+        /// <returns>送信結果</returns>
+        public UniTask<SendQuestReportResult> SendQuestReportAsync(SendQuestReportRequest request, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+
+            return sendQuestReport.ProcessAsync(request, token);
         }
     }
 }

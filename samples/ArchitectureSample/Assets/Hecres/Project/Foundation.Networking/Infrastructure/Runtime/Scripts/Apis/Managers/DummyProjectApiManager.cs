@@ -19,6 +19,7 @@ namespace Hecres.Project.Foundation.Networking.Infrastructure.Apis.Managers
         public DummyProjectApiManager()
         {
             getQuestList = new DummyGetQuestList();
+            sendQuestReport = new DummySendQuestReport();
         }
 
         /// <summary>
