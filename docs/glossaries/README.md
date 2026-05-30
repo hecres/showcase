@@ -41,7 +41,6 @@ PJ横断で用いる共通語彙。アーキテクチャ・データ・演出・
 | [マスターデータ](commons/gls-data-masterdata.md) | MasterData / Surface / Appearance / AbilityData |
 | ユーザーデータ | ProgressData / InventoryData / WalletData |
 | JSONデータ | ForJson（シリアライズ専用データ） |
-| エラー | ErrorCode / ErrorType / ErrorNumber |
 | 演出 | Marker / Performer / Socket / Spawner |
 | [設定・パラメータ](commons/gls-settings.md) | Preference / Config / Settings / Tuning / Cosmetic |
 | ストア | Store / StoreItem / PriceTag |
