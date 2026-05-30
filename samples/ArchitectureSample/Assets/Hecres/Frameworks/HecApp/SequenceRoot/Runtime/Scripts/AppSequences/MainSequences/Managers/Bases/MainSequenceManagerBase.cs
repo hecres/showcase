@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Hecres.Core.HecError.Handlers.Interfaces;
 using Hecres.Core.HecUnity.Presentation.UnityObjects.Components.Behaviours.MonoBehaviours.Bases;
 using Hecres.Frameworks.HecApp.Presentation.AppSequences.SceneSequences.LayerableCanvases.Managers.Interfaces;
 using Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.SceneSequences.Managers.Interfaces;
 using Hecres.Frameworks.HecInput.Presentation.EventSystems.Interfaces;
 using Hecres.Frameworks.HecUI.Presentation.UI.Managements.FocusSystems.Interfaces;
-using R3;
 using VContainer;
 
 namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Managers.Bases
@@ -17,13 +15,6 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
     /// </summary>
     public abstract partial class MainSequenceManagerBase : HecUnityMonoBehaviourBase
     {
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        /// <summary>
-        /// 依存性注入リゾルバ
-        /// </summary>
-        [field: Inject]
-        protected IObjectResolver Resolver { get; }
-
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         /// <summary>
         /// イベントシステムインターフェース
@@ -75,27 +66,12 @@ namespace Hecres.Frameworks.HecApp.SequenceRoot.AppSequences.MainSequences.Manag
         {
             token.ThrowIfCancellationRequested();
 
-            HandleUncaughtException();
             InitializeInputActions();
 
             await InitializeUiManagersAsync(token);
             await InitializeInternalAsync(token);
 
             await LoadFirstSceneSequenceAsync(token);
-        }
-
-        /// <summary>
-        /// 未キャッチ例外のハンドリングを設定します。
-        /// </summary>
-        private void HandleUncaughtException()
-        {
-            var uncaughtExceptionHandler = Resolver.Resolve<IUncaughtExceptionHandler>();
-            uncaughtExceptionHandler.UncaughtExceptionThrown.Subscribe(value =>
-                                        {
-                                            // TODO: 未キャッチ例外発生時のエラーハンドリングを行います（基本はダイアログを出し、タイトルに戻します）。
-                                        }
-                                    )
-                                    .AddTo(this);
         }
 
         /// <summary>

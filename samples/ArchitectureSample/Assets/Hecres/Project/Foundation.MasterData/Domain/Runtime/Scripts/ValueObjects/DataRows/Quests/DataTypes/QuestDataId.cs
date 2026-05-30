@@ -1,37 +1,36 @@
-using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.CryptedWrappers.Bases;
+using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.Bases;
 
 namespace Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes
 {
     /// <summary>
     /// クエストのマスターデータIDの型クラス
     /// </summary>
-    public class QuestDataId : CryptedStringBase<QuestDataId>
+    public class QuestDataId : StringDataTypeWrapperBase<QuestDataId>
     {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="plainValue">平文による値</param>
-        /// <param name="useEncryption">暗号化を行うかどうか</param>
-        public QuestDataId(string plainValue, bool useEncryption = false) : base(plainValue, useEncryption, IsValid, ProcessPlainValue)
+        /// <param name="value">値</param>
+        public QuestDataId(string value) : base(value, IsValid, NormalizeValue)
         {
         }
 
         /// <summary>
         /// 値が有効かどうかを返します。
         /// </summary>
-        /// <param name="plainValue">平文の値</param>
+        /// <param name="value">値</param>
         /// <returns>true: 有効 / false: 無効</returns>
-        public static bool IsValid(string plainValue)
+        public static bool IsValid(string value)
         {
-            plainValue = ProcessPlainValue(plainValue);
-            return !string.IsNullOrEmpty(plainValue);
+            value = NormalizeValue(value);
+            return !string.IsNullOrEmpty(value);
         }
 
         /// <summary>
         /// 入力値を前処理します。
         /// </summary>
-        /// <param name="plainValue">平文の値</param>
+        /// <param name="value">値</param>
         /// <returns>前処理後の値</returns>
-        private static string ProcessPlainValue(string plainValue) => plainValue;
+        private static string NormalizeValue(string value) => value;
     }
 }

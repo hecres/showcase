@@ -1,5 +1,3 @@
-using Hecres.Core.HecError.Handlers;
-using Hecres.Core.HecError.Handlers.Interfaces;
 using Hecres.Frameworks.HecApp.Presentation.AppSequences.SceneSequences.LayerableCanvases.Managers;
 using Hecres.Frameworks.HecInput.Presentation.EventSystems;
 using Hecres.Frameworks.HecResource.Domain.Repositories.ResourceLoaders.Interfaces;
@@ -42,8 +40,6 @@ namespace Hecres.Frameworks.HecApp.CompositionRoot.AppSequences.MainSequences.Ba
         /// </summary>
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<UncaughtExceptionHandler>(Lifetime.Singleton).As<IUncaughtExceptionHandler>();
-
             HecEventSystem = HecEventSystem.InstantiateAndBind(builder);
             CanvasManager = CanvasManager.FindAndBind(builder);
             UiFocusSystem = UiFocusSystem.InstantiateAndBind(builder, HecEventSystem, CanvasManager);

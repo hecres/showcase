@@ -16,7 +16,6 @@ namespace Hecres.Frameworks.HecNetworking.Infrastructure.Apis.Connectors.Functio
     /// <typeparam name="TResult">APIリクエスト結果の型</typeparam>
     public abstract class HecApiFunctionBase<TRequest, TResult>
         where TRequest : IHecApiRequest
-        where TResult : IHecApiResult
     {
         /// <summary>
         /// 最後に処理されたAPIリクエストの結果

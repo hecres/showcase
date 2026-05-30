@@ -2,7 +2,6 @@
     "name": "Hecres.Frameworks.HecApp.CompositionRoot",
     "rootNamespace": "",
     "references": [
-        "GUID:a619794d1d454e4482390e99ea737404",
         "GUID:b9a631bbbe9ad4949bbae22db1032f1e",
         "GUID:422c2181e4a104c438be506c31748e6e",
         "GUID:c109a4116e7a4dc88d3ed6ab0371b2a8",

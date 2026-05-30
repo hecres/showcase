@@ -15,7 +15,6 @@ namespace Hecres.Project.Foundation.Networking.Infrastructure.Apis.Connectors.Fu
     /// <typeparam name="TResult">APIリクエスト結果の型</typeparam>
     public abstract class ProjectApiFunctionBase<TRequest, TResult> : HecApiFunctionBase<TRequest, TResult>
         where TRequest : IHecApiRequest
-        where TResult : IHecApiResult
     {
     }
 }

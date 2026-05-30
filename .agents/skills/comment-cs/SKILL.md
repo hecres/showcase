@@ -24,7 +24,7 @@ C# コードに XML ドキュメントコメントを規約に従って付与・
 - [汎用メソッド](references/templates/template-common.md)
 - [UI 遷移メソッド](references/templates/template-ui.md)
 - [非同期メソッド](references/templates/template-async.md)
-- [暗号化ラッパー](references/templates/hec-frameworks/template-crypted.md)
+- [型ラッパー](references/templates/hec-frameworks/template-data-type-wrapper.md)
 - [JSON変換用クラス](references/templates/hec-frameworks/template-for-json.md)
 
 ## 実行原則

@@ -39,13 +39,12 @@ namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestExecu
         /// </summary>
         /// <param name="isWin">クエストに勝利したかどうか</param>
         /// <param name="token">キャンセル用のトークン</param>
-        /// <returns>true: 送信成功 / false: 送信失敗</returns>
-        public async UniTask<bool> SendResultAsync(bool isWin, CancellationToken token)
+        /// <returns>送信処理の非同期タスク</returns>
+        public async UniTask SendResultAsync(bool isWin, CancellationToken token)
         {
             token.ThrowIfCancellationRequested();
 
-            var result = await apiRequester.SendQuestReportAsync(new SendQuestReportRequest(QuestId, isWin), token);
-            return result.IsSuccess;
+            await apiRequester.SendQuestReportAsync(new SendQuestReportRequest(QuestId, isWin), token);
         }
     }
 }

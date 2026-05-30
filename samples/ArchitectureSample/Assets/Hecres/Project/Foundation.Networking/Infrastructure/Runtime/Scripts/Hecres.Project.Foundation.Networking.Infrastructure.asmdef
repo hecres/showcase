@@ -2,7 +2,6 @@
     "name": "Hecres.Project.Foundation.Networking.Infrastructure",
     "rootNamespace": "",
     "references": [
-        "GUID:a619794d1d454e4482390e99ea737404",
         "GUID:a76a97d1499843eb859ecd8bc0945027",
         "GUID:9a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
         "GUID:aa2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",

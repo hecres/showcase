@@ -1,34 +1,33 @@
-﻿using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.CryptedWrappers.Bases;
+using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.Bases;
 
 namespace Hecres.Frameworks.HecUI.Presentation.UI.Managements.Canvases.LayerableCanvases.DataTypes
 {
     /// <summary>
     /// レイヤーソート順の型クラス
     /// </summary>
-    public class LayerSortingOrder : CryptedIntBase<LayerSortingOrder>
+    public class LayerSortingOrder : IntDataTypeWrapperBase<LayerSortingOrder>
     {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="plainValue">平文による値</param>
-        /// <param name="useEncryption">暗号化を行うかどうか</param>
-        public LayerSortingOrder(int plainValue, bool useEncryption = false) : base(plainValue, useEncryption, IsValid, ProcessPlainValue)
+        /// <param name="value">値</param>
+        public LayerSortingOrder(int value) : base(value, IsValid, NormalizeValue)
         {
         }
 
         /// <summary>
         /// 値が有効かどうかを返します。
         /// </summary>
-        /// <param name="plainValue">検証対象（平文）</param>
+        /// <param name="value">検証対象</param>
         /// <returns>true: 有効 / false: 無効</returns>
-        public static bool IsValid(int plainValue) => true;
+        public static bool IsValid(int value) => true;
 
         /// <summary>
         /// 入力値を前処理します。
         /// </summary>
-        /// <param name="plainValue">処理対象（平文）</param>
+        /// <param name="value">処理対象</param>
         /// <returns>前処理後の値</returns>
-        private static int ProcessPlainValue(int plainValue) => plainValue;
+        private static int NormalizeValue(int value) => value;
 
         #region Operators
 
