@@ -1,0 +1,26 @@
+{
+    "name": "Hecres.Project.Foundation.Networking.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a619794d1d454e4482390e99ea737404",
+        "GUID:a76a97d1499843eb859ecd8bc0945027",
+        "GUID:9a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:aa2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:7a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:8a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:6a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "R3.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

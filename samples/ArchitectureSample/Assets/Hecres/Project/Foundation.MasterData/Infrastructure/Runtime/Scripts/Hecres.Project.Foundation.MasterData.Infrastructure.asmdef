@@ -1,0 +1,24 @@
+{
+    "name": "Hecres.Project.Foundation.MasterData.Infrastructure",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d6cbbd00130d4d64a355d0b797f0bff2",
+        "GUID:5a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:6a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:2a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:3a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:4a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

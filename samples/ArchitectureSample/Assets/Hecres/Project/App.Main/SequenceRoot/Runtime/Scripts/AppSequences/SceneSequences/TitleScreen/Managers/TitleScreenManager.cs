@@ -24,8 +24,7 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Title
         {
             token.ThrowIfCancellationRequested();
 
-            var args = new TitleScreenSequence.ManualArgs();
-            return UniTask.FromResult(new TitleScreenSequence(args));
+            return UniTask.FromResult(new TitleScreenSequence());
         }
 
         /// <summary>
