@@ -6,6 +6,7 @@ using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Bases.Man
 using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestExecution.Managers;
 using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestSelect;
 using Hecres.Project.Foundation.MasterData.Domain.Repositories.Managers.Interfaces;
+using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 using Hecres.Project.Foundation.Networking.Domain.Repositories.Apis.Managers.Interfaces;
 using R3;
 using UnityEngine;
@@ -70,11 +71,9 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
         /// <param name="questId">実行対象のクエストID</param>
         /// <param name="token">キャンセル用のトークン</param>
         /// <returns>遷移処理の非同期タスク</returns>
-        private async UniTask LoadQuestExecutionSequenceAsync(string questId, CancellationToken token)
+        private async UniTask LoadQuestExecutionSequenceAsync(QuestDataId questId, CancellationToken token)
         {
             token.ThrowIfCancellationRequested();
-
-            if (string.IsNullOrEmpty(questId)) throw new ArgumentException("値が空です", nameof(questId));
 
             await SceneSequenceLoader.LoadSceneSequenceAsync(new QuestExecutionManagerArgs(questId));
         }

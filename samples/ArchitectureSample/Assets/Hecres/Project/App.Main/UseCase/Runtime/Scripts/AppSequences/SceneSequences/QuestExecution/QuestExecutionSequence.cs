@@ -14,17 +14,15 @@ namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestExecu
         /// <remarks>
         /// クエスト選択シーケンスから受け渡された、実行するクエストのIDです。
         /// </remarks>
-        public string QuestId { get; }
+        public QuestDataId QuestId { get; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="questId">実行対象のクエストID</param>
-        public QuestExecutionSequence(string questId)
+        public QuestExecutionSequence(QuestDataId questId)
         {
-            if (string.IsNullOrEmpty(questId)) throw new ArgumentException("値が空です", nameof(questId));
-
-            QuestId = questId;
+            QuestId = questId ?? throw new ArgumentNullException(nameof(questId));
         }
     }
 }

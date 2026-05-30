@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 using Hecres.Project.Foundation.Networking.Domain.Entities.Apis.Contents.Quests;
 using Hecres.Project.Foundation.Networking.Domain.ValueObjects.Apis.Contents.Quests;
 using Hecres.Project.Foundation.Networking.Infrastructure.Apis.Connectors.Functions.Bases;
@@ -25,12 +26,12 @@ namespace Hecres.Project.Foundation.Networking.Infrastructure.Apis.Connectors.Fu
         {
             token.ThrowIfCancellationRequested();
 
-            var questIds = new List<string>
+            var questIds = new List<QuestDataId>
             {
-                "quest_001",
-                "quest_002",
-                "quest_003",
-                "quest_004"
+                new QuestDataId("quest_001"),
+                new QuestDataId("quest_002"),
+                new QuestDataId("quest_003"),
+                new QuestDataId("quest_004")
             };
 
             return UniTask.FromResult(new GetQuestListResult(questIds));

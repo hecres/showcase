@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Hecres.Frameworks.HecApp.Presentation.AppSequences.SceneSequences.Presenters.Bases;
 using Hecres.Project.App.Main.Presentation.AppSequences.SceneSequences.QuestSelect.Views;
 using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestSelect;
+using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 using R3;
 using UnityEngine;
 
@@ -22,12 +23,12 @@ namespace Hecres.Project.App.Main.Presentation.AppSequences.SceneSequences.Quest
         /// <remarks>
         /// 通知値は選択されたクエストのIDです。
         /// </remarks>
-        public Observable<string> QuestStartRequested => questStartRequested;
+        public Observable<QuestDataId> QuestStartRequested => questStartRequested;
 
         [SerializeField] private Transform questItemParent;
         [SerializeField] private QuestItemUi questItemUiPrefab;
 
-        private readonly Subject<string> questStartRequested = new();
+        private readonly Subject<QuestDataId> questStartRequested = new();
 
         /// <summary>
         /// MVRPのRX紐づけ時に呼び出されます。
@@ -46,7 +47,7 @@ namespace Hecres.Project.App.Main.Presentation.AppSequences.SceneSequences.Quest
                 var questItemUi = Instantiate(questItemUiPrefab, questItemParent);
                 questItemUi.Setup(questData);
                 questItemUi.SelectRequested
-                           .Subscribe(selectedQuestData => questStartRequested.OnNext(selectedQuestData.DataId.Value))
+                           .Subscribe(selectedQuestData => questStartRequested.OnNext(selectedQuestData.DataId))
                            .AddTo(MvrpRxToken);
             }
 

@@ -6,7 +6,6 @@ using Cysharp.Threading.Tasks;
 using Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.Bases;
 using Hecres.Project.Foundation.MasterData.Domain.Entities.DataRows.Quests;
 using Hecres.Project.Foundation.MasterData.Domain.Repositories.Managers.Interfaces;
-using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 using Hecres.Project.Foundation.Networking.Domain.Repositories.Apis.Managers.Interfaces;
 using Hecres.Project.Foundation.Networking.Domain.ValueObjects.Apis.Contents.Quests;
 
@@ -56,7 +55,7 @@ namespace Hecres.Project.App.Main.UseCase.AppSequences.SceneSequences.QuestSelec
 
             var result = await apiRequester.GetQuestListAsync(new GetQuestListRequest(), token);
             availableQuests = result.QuestIds
-                .Select(questId => masterDataGetter.QuestMasterDataTable.GetValue(new QuestDataId(questId)))
+                .Select(questId => masterDataGetter.QuestMasterDataTable.GetValue(questId))
                 .ToList();
         }
     }

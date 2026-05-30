@@ -1,5 +1,6 @@
 using System;
 using Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Bases.Managers;
+using Hecres.Project.Foundation.MasterData.Domain.ValueObjects.DataRows.Quests.DataTypes;
 
 namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.QuestExecution.Managers
 {
@@ -11,17 +12,15 @@ namespace Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.Quest
         /// <summary>
         /// 実行対象のクエストID
         /// </summary>
-        public string QuestId { get; }
+        public QuestDataId QuestId { get; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="questId">実行対象のクエストID</param>
-        public QuestExecutionManagerArgs(string questId)
+        public QuestExecutionManagerArgs(QuestDataId questId)
         {
-            if (string.IsNullOrEmpty(questId)) throw new ArgumentException("値が空です", nameof(questId));
-
-            QuestId = questId;
+            QuestId = questId ?? throw new ArgumentNullException(nameof(questId));
         }
     }
 }
