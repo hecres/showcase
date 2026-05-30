@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea6d29374041a34c8f445f79d684268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Hecres.Project.App.Main.SequenceRoot::Hecres.Project.App.Main.SequenceRoot.AppSequences.SceneSequences.TitleScreen.Managers.TitleScreenManager
-  sequenceUiPresenterPrefab: {fileID: 3239084222122435942, guid: f2b93dbbb0f3efc4f9952dc217589e76, type: 3}
+  sequenceUiPresenterPrefab: {fileID: 691012202605525254, guid: 0aa96e2cd3c8b934b8a2a44ae25ae245, type: 3}
 --- !u!4 &821725218
 Transform:
   m_ObjectHideFlags: 0
