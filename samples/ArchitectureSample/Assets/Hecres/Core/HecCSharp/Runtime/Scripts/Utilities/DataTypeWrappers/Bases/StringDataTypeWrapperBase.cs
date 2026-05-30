@@ -1,67 +1,39 @@
-﻿using System;
+using System;
 using System.Globalization;
-using System.Linq;
-using Hecres.Core.HecCSharp.Utilities.Cryptography;
-using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.CryptedWrappers.Interfaces;
+using Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.Interfaces;
 
-namespace Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.CryptedWrappers.Bases
+namespace Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.Bases
 {
     /// <summary>
-    /// 暗号化対応stringの型クラスの基底
+    /// stringの型クラスの基底
     /// </summary>
-    public abstract class CryptedStringBase<T> : ICryptedStringValue, IComparable<T>, IEquatable<T>
-        where T : CryptedStringBase<T>
+    /// <typeparam name="T">継承先の型</typeparam>
+    public abstract class StringDataTypeWrapperBase<T> : IDataTypeWrapper<string>, IComparable<T>, IEquatable<T>
+        where T : StringDataTypeWrapperBase<T>
     {
         /// <summary>
-        /// 復号後の値
+        /// 値
         /// </summary>
-        public string Value => IsEncrypted() ? HecEncryptor.DecryptString(encryptedValue, seed) : plainValue;
-
-        private readonly string plainValue;
-        private readonly byte[] encryptedValue;
-        private readonly byte[] hashedEncryptedValue;
-        private readonly byte seed;
+        public string Value { get; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="plainValue">平文による値</param>
-        /// <param name="useEncryption">暗号化を行うかどうか</param>
+        /// <param name="value">値</param>
         /// <param name="isValidFunc">値の妥当性検証関数</param>
-        /// <param name="processPlainValueFunc">平文値の前処理関数</param>
-        protected CryptedStringBase(string plainValue, bool useEncryption, Func<string, bool> isValidFunc, Func<string, string> processPlainValueFunc)
+        /// <param name="normalizeValueFunc">値の正規化関数</param>
+        protected StringDataTypeWrapperBase(string value, Func<string, bool> isValidFunc, Func<string, string> normalizeValueFunc)
         {
             if (isValidFunc == null) throw new ArgumentNullException(nameof(isValidFunc));
-            if (processPlainValueFunc == null) throw new ArgumentNullException(nameof(processPlainValueFunc));
+            if (normalizeValueFunc == null) throw new ArgumentNullException(nameof(normalizeValueFunc));
 
-            if (!isValidFunc.Invoke(plainValue))
+            if (!isValidFunc.Invoke(value))
             {
-                throw new FormatException($"\"{nameof(plainValue)} ({processPlainValueFunc.Invoke(plainValue)})\" format error");
+                throw new FormatException($"\"{nameof(value)} ({normalizeValueFunc.Invoke(value)})\" format error");
             }
 
-            var processPlainValue = processPlainValueFunc.Invoke(plainValue);
-            if (!useEncryption)
-            {
-                this.plainValue = processPlainValue;
-                return;
-            }
-
-            seed = Seed.RandomByte();
-            encryptedValue = HecEncryptor.Encrypt(processPlainValue, seed);
-            hashedEncryptedValue = HecHasher.ToHash(encryptedValue, seed);
+            Value = normalizeValueFunc.Invoke(value);
         }
-
-        /// <summary>
-        /// 暗号化されているかどうかを返します。
-        /// </summary>
-        /// <returns>true: 暗号化されている / false: 暗号化されていない</returns>
-        public bool IsEncrypted() => encryptedValue != null;
-
-        /// <summary>
-        /// データが改竄されていないかを確認します。
-        /// </summary>
-        /// <returns>true: 改竄形跡がなく、整合性が保たれている / false: 改竄形跡があり、整合性が保たれていない</returns>
-        public bool IsSecure() => !IsEncrypted() || hashedEncryptedValue.SequenceEqual(HecHasher.ToHash(encryptedValue, seed));
 
         /// <summary>
         /// 指定されたオブジェクトと比較します。
@@ -122,12 +94,12 @@ namespace Hecres.Core.HecCSharp.Utilities.DataTypeWrappers.CryptedWrappers.Bases
         /// <summary>
         /// 等価演算子
         /// </summary>
-        public static bool operator ==(CryptedStringBase<T> a, CryptedStringBase<T> b) => Equals(a, b);
+        public static bool operator ==(StringDataTypeWrapperBase<T> a, StringDataTypeWrapperBase<T> b) => Equals(a, b);
 
         /// <summary>
         /// 非等価演算子
         /// </summary>
-        public static bool operator !=(CryptedStringBase<T> a, CryptedStringBase<T> b) => !Equals(a, b);
+        public static bool operator !=(StringDataTypeWrapperBase<T> a, StringDataTypeWrapperBase<T> b) => !Equals(a, b);
 
         #endregion
     }

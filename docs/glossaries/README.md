@@ -77,7 +77,7 @@ Unity に依存しない本PJ独自基盤（Core 層）の語彙。
 
 | 用語集 | 主な収録語 |
 |---|---|
-| セキュリティ | Crypted（チート対策の暗号化ラッパー） |
+| 型ラッパー | DataTypeWrapper（プリミティブ値の型ラップ基底） |
 
 ### HecFrameworks（hec-frameworks）
 
