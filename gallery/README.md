@@ -4,7 +4,9 @@
 
 ## ゲーム本編
 
-TODO
+[![バトル画面](images/game-battle.jpg)](videos/game-battle.mp4)
+
+[動画を開く](videos/game-battle.mp4)
 
 ## マスターデータ編集ツール
 
@@ -13,7 +15,7 @@ TODO
 
 Unity上で動作しているため、登録アセットの実在チェックなど、関連データの把握や編集状態の確認をしやすくなっています。
 
-<video src="videos/master-data-catalog.mp4" controls muted playsinline></video>
+[![マスターデータ編集ツールの操作画面](images/master-data-catalog.jpg)](videos/master-data-catalog.mp4)
 
 [動画を開く](videos/master-data-catalog.mp4)
 
@@ -22,6 +24,6 @@ Unity上で動作しているため、登録アセットの実在チェックな
 エネミーとして登場させるメカを作成するためのツールです。<br/>
 パーツ構成や見た目を確認しながら調整できるようにし、ゲーム内に登場するユニット制作を効率化しています。
 
-<video src="videos/piece-avatar-builder.mp4" controls muted playsinline></video>
+[![エネミー作成ツールの操作画面](images/piece-avatar-builder.jpg)](videos/piece-avatar-builder.mp4)
 
 [動画を開く](videos/piece-avatar-builder.mp4)
