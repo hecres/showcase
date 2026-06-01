@@ -4,9 +4,19 @@
 
 ## ゲーム本編
 
+### ホームメニュー画面
+
+![ホームメニュー画面](images/game-home.jpg)
+
+### バトル画面
+
 [![バトル画面](images/game-battle.jpg)](videos/game-battle.mp4)
 
 [動画を開く](videos/game-battle.mp4)
+
+### 会話画面
+
+![会話画面](images/game-talk.jpg)
 
 ## マスターデータ編集ツール
 
